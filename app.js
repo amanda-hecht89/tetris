@@ -83,6 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function control(e) {
         if (e.keyCode === 37) {
             moveLeft();
+        } else if (e.keyCode === 38) {
+            // rotate()
+        } else if (e.keyCode === 39) {
+            moveRight();
+        } else if (e.keyCode === 40) {
+            moveDown();
         }
     }
     document.addEventListener('keyup', control);
@@ -109,6 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!leftEdge) currentPosition -= 1;
         if (current.some(index => squares[currentPosition + index].classList.containes('taken'))) {
             currentPosition += 1;
+        }
+        draw();
+    }
+
+    //move right
+
+    function moveRight() {
+        undraw();
+        const rightEdge = current.some(index => (currentPosition + index) % width === width - 1);
+    
+        if (!rightEdge) currentPosition += 1;
+        if (current.some(index => squares[currentPosition + index].classList.containes('taken'))) {
+            currentPosition -= 1;
         }
         draw();
     }
