@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = 10;
     const height = 200;
     let timerId = 1000; 
+    let nextRandom = 0;
 
     const grid = document.querySelector('.grid');
     const ScoreDisplay = document.querySelector('#score');
@@ -100,10 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
             current.forEach(index => squares[currentPosition + index].classList.add('taken'));
             // new tetris falling
-            random = Math.floor(Math.random() * theTetris.length);
+            random = nextRandom;
+            nextRandom = Math.floor(Math.random() * theTetris.length);
             current = theTetris[random][currentRotation];
             currentPosition = 4;
             draw();
+            displayShape();
         }
     }
 
@@ -142,9 +145,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         current = theTetris[random][currentRotation];
         draw();
-
     }
 
+    // show next tetris
+    const displayNext = document.querySelectorAll('.nextGrid div');
+    const nextWidth = 4;
+    let displayNextIndex = 0;
+
+    // tetris without rotation
+    const nextTetris = [
+        [1, nextWidth + 1, nextWidth * 2 + 1, 2],          //ltetris
+        [0, nextWidth, nextWidth + 1, nextWidth * 2 + 1],  //ztetris
+        [1, nextWidth, nextWidth + 1, nextWidth + 2],     //ttetris
+        [0, 1, nextWidth, nextWidth + 1],                 //otetris
+        [1, nextWidth + 1, nextWidth * 2 + 1, nextWidth * 3 + 1],    //itetris
+    ];
+
+    // display next shape
+    function displayShape() {
+        // remove old tetris grom grid
+        displayNext.forEach(square => {
+            square.classList.remove('tetris');
+        });
+        nextTetris[nextRandom].forEach(index => {
+            displayNext[displayNextIndex + index].classList.add('tetris');
+        });
+    }
 
 
 

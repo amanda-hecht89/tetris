@@ -25,6 +25,9 @@ header {
 .tetris {
     background-color: black;
     outline: 1px solid white;
+    border-radius: 25%;
+    /* -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 1px -2px 0px 0px rgba(0,0,0,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 1px -2px 0px 0px rgba(0,0,0,0); */
 }
 
 .nextGrid {
@@ -33,15 +36,13 @@ header {
     margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
-    background-color: orangered
+    background-color: rgb(214, 119, 1)
 
 }
 
 .nextGrid div {
     height: 20px;
     width: 20px;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .container {
