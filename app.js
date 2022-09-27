@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const width = 10;
     const height = 200;
-    let timerId = 1000; 
+    let timerId;
     let nextRandom = 0;
 
     const grid = document.querySelector('.grid');
-    const ScoreDisplay = document.querySelector('#score');
-    const StartBtn = document.querySelector('#start');
+    const scoreDisplay = document.querySelector('#score');
+    const startBtn = document.querySelector('#start');
     let squares = Array.from(document.querySelectorAll('.grid div'));
 
     // build tetrominoes
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // make tetris move down
-    timerId = setInterval(moveDown, 1000);
+    // timerId = setInterval(moveDown, 1000);
 
     function moveDown() {
         undraw();
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // display next shape
     function displayShape() {
-        // remove old tetris grom grid
+        // remove old tetris from grid
         displayNext.forEach(square => {
             square.classList.remove('tetris');
         });
@@ -171,6 +171,39 @@ document.addEventListener('DOMContentLoaded', () => {
             displayNext[displayNextIndex + index].classList.add('tetris');
         });
     }
+
+    // start button functionality
+
+    startBtn.addEventListener('click', () => {
+        if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+        } else {
+            draw();
+            timerId = setInterval(moveDown, 1000);
+            nextRandom = Math.floor(Math.random() * theTetris.length);
+            displayShape();
+        }
+    });
+
+    // add score
+
+    function addScore() {
+        for (let i = 0; i < 199; i += width) {
+            const row = [i, i + 1, i + 2, i + 3, i + 4, i + 5, i + 6, i + 7, i + 8, i + 9];
+            if (row.every(index => square[index].classList.contains('taken'))) {
+                score += 10;
+                scoreDisplay.innerHTML = score;
+                row.forEach(index => {
+                    squares[index].classList.remove('taken');
+                });
+                const squaresRemoved = squares.splice(i, width);
+                console.log(squares);
+            }
+        }
+    }
+
+
 
 
 
