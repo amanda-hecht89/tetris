@@ -1,52 +1,39 @@
 
 
 
-header {
+.container {
     display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
-}
-
-.grid {
+  }
+  
+  
+  .grid {
     width: 200px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: orangered
-}
-
-.grid div {
+    background-color: yellow;
+  }
+  
+  .grid div {
     height: 20px;
     width: 20px;
-}
-
-.tetris {
-    background-color: black;
-    outline: 1px solid white;
-    border-radius: 25%;
-    /* -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 1px -2px 0px 0px rgba(0,0,0,0); 
-    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 1px -2px 0px 0px rgba(0,0,0,0); */
-}
-
-.nextGrid {
+  }
+  
+  .tetromino {
+    background-color: blue;
+  }
+  
+  
+  .mini-grid {
+    margin-left: 50px;
     width: 80px;
     height: 80px;
-    margin-left: 50px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(214, 119, 1)
-
-}
-
-.nextGrid div {
+    background-color: yellow;
+  }
+  
+  .mini-grid div {
     height: 20px;
     width: 20px;
-}
-
-.container {
-    display: flex;
-}
-
-
+  }
