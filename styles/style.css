@@ -2,6 +2,13 @@
     display: flex;
     justify-content: center;
   }
+
+  body {
+    background-image: url(../assets/images/sky.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
   
   
   .grid {
@@ -18,7 +25,10 @@
   }
   
   .tetromino {
-    background-color: blue;
+    outline: 1px solid black;
+    border-radius: 10%;
+
+
   }
   
   
