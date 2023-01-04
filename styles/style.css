@@ -16,7 +16,8 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(24, 175, 62);
+    background-color: rgba(247, 247, 247, 0.458);
+    outline: 1px solid rgba(0, 0, 0, 0.297);
   }
   
   .grid div {
@@ -38,7 +39,8 @@
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(16, 139, 192);
+    background-color: rgba(247, 247, 247, 0.458);
+    outline: 1px solid rgba(0, 0, 0, 0.297);
   }
   
   .mini-grid div {

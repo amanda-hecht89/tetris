@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerId;
     let score = 0;
     const colors = [
-        'darkBlue',
-        'lightBlue',
-        'slateBlue',
-        'grey',
-        'blue'
+        'red',
+        'orange',
+        'green',
+        'dodgerBlue',
+        'darkViolet'
     ];
   
     //The Tetrominoes
