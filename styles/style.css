@@ -2,6 +2,13 @@
     display: flex;
     justify-content: center;
   }
+
+  body {
+    background-image: url(../assets/images/sky.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
   
   
   .grid {
@@ -9,7 +16,8 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(24, 175, 62);
+    background-color: rgba(247, 247, 247, 0.458);
+    outline: 1px solid rgba(0, 0, 0, 0.297);
   }
   
   .grid div {
@@ -18,7 +26,10 @@
   }
   
   .tetromino {
-    background-color: blue;
+    outline: 1px solid black;
+    border-radius: 10%;
+
+
   }
   
   
@@ -28,7 +39,8 @@
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(16, 139, 192);
+    background-color: rgba(247, 247, 247, 0.458);
+    outline: 1px solid rgba(0, 0, 0, 0.297);
   }
   
   .mini-grid div {
